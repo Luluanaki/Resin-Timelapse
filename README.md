@@ -1,7 +1,7 @@
 # Resin Printer Timelapse Program
 
 A Python script that captures high-quality timelapses of resin printer jobs by
-synchronizing camera frames with actual layer timing. Designed for the Resin Printers
+synchronizing camera frames with actual layer timing. Designed for resin printers
 and ChiTuBox-style slicer settings.
 
 ---
