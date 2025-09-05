@@ -6,7 +6,7 @@ and ChiTuBox-style slicer settings.
 
 ---
 
-## ✨ Features
+# ✨ Features
 - Two-stage motion calculations (ChiTuBox “+” distances).
 - Support for bottom layer overrides, normal overrides, and transition layers.
 - Firmware overhead calibration for real-world accuracy.
@@ -17,12 +17,12 @@ and ChiTuBox-style slicer settings.
 
 ---
 
-## 🖼️ Example
+# 🖼️ Example
 *Timelapse examples soon to come*
 
 ---
 
-## 🛠️ Notes
+# 🛠️ Notes
 - Tested on Windows 10 with Uniformation GKTwo.
 - Should work cross-platform (macOS/Linux) for folder opening and ffmpeg.
 - Used a basic logitech webcam for captures.
@@ -83,7 +83,9 @@ When the print finishes, the script:
 - (Optional) Deletes all captured images
 - (Optional) Opens the folder in Explorer/Finder/Linux.
 
-## Tune firmware Overhead
+---
+
+# 🧪 Tune firmware Overhead
 
 Modern resin printers add small, fixed delays each layer that don’t show up in slicer math (LCD settle time, motion controller latency, acceleration ramps, UI/LED delays, etc.).
 This script models that as a single constant: `FIRMWARE_OVERHEAD_S = 1.4`
@@ -95,13 +97,27 @@ By including this value, the program aligns theoretical timing more closely with
 **The closer the actual print timing, the more smooth the timelapse.**
 
 
-# Calibration
-To calibrate your own printer’s firmware overhead:
-1. Start a print and use a stopwatch to measure start-to-start layer times:
-- Begin timing when the UV light turns on.
-- Stop timing when it turns on again.
-- For accuracy, measure multiple layers (e.g., 10) and divide by the count.
-2. Run the script once to see the Normal (theoretical) layer time in the startup summary.
-3. Calculate: FIRMWARE_OVERHEAD_S = measured_normal - theoretical_normal
-- Update constant in **timelapse.py**, `FIRMWARE_OVERHEAD_S = X.X`
-4. Start your program when beginning your print. Captures should now better match your printer’s actual cycle time.
+##  Calibration
+
+To calibrate your printer’s firmware overhead:
+
+1. **Measure your actual normal layer time**
+    - Start a print and use a stopwatch to measure start-to-start layer times:
+      - Begin timing when the **UV light turns on**.
+      - Stop timing when it turns on again.
+    - For accuracy, measure multiple layers (e.g., 10) and divide by that count.
+
+2. **Get the theoretical layer time**
+   - Run the script once.
+   - Look at the startup summary for `Normal (theoretical): X.XX s`
+
+3. **Calculate firmware overhead**
+    - `FIRMWARE_OVERHEAD_S = measured_normal - theoretical_normal`
+
+5. **Update the constant**
+    - Open **timelapse.py** and set:  `FIRMWARE_OVERHEAD_S = X.X`
+
+5. **Re-run the program**
+    - Start your program when beginning a print.
+    - Captures should now closely match your printer’s actual cycle time.
+
