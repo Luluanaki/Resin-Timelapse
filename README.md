@@ -30,7 +30,7 @@ and ChiTuBox-style slicer settings.
 
 ---
 
-# Installation
+# 🔧 Installation
 ## 1. Install Python
 This script requires **Python 3.8+**.  
 Download and install from the official site: [Python Downloads](https://www.python.org/downloads/).
