@@ -101,12 +101,12 @@ def compute_times():
     b_lift, b_retr = bottom_motion_time_s()
 
     # Theoretical per-layer times (+ firmware overhead)
-    t_normal_theoretical = layer_time_s(NORMAL_EXPOSURE_S, n_lift, n_retr) + FIRMWARE_OVERHEAD_S
-    t_bottom_theoretical = layer_time_s(BOTTOM_EXPOSURE_S, b_lift, b_retr) + FIRMWARE_OVERHEAD_S
+    t_normal_theoretical = layer_time_s(NORMAL_EXPOSURE_S, n_lift, n_retr)
+    t_bottom_theoretical = layer_time_s(BOTTOM_EXPOSURE_S, b_lift, b_retr)
 
     # Apply measured overrides if enabled
-    t_normal = MEASURED_NORMAL_S if USE_MEASURED_NORMAL else t_normal_theoretical
-    t_bottom = MEASURED_BOTTOM_S if USE_MEASURED_BOTTOM else t_bottom_theoretical
+    t_normal = MEASURED_NORMAL_S if USE_MEASURED_NORMAL else (t_normal_theoretical + FIRMWARE_OVERHEAD_S)
+    t_bottom = MEASURED_BOTTOM_S if USE_MEASURED_BOTTOM else (t_bottom_theoretical + FIRMWARE_OVERHEAD_S)
 
     # Transition layers use NORMAL motion, stepped exposures, + overhead per layer
     t_transition_each = [layer_time_s(exp, n_lift, n_retr) + FIRMWARE_OVERHEAD_S
