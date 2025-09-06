@@ -36,7 +36,7 @@ N_RETR_MM_1,   N_RETR_MM_2   = 2.2, 2.0
 N_RETR_V_1,    N_RETR_V_2    = 230.0, 90.0
 
 # Small fixed overhead per layer to account for controller/accel/settle latencies
-FIRMWARE_OVERHEAD_S = 1.4
+FIRMWARE_OVERHEAD_S = 1.3
 
 # ---- Manual overrides for real-world per-layer time ----
 # Normal
