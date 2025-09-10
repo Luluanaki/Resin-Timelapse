@@ -18,7 +18,9 @@ and ChiTuBox-style slicer settings.
 ---
 
 # 🖼️ Example
-*Timelapse examples soon to come*
+<video autoplay loop muted playsinline width="640">
+  <source src="assets/Body2_Head1.mp4" type="video/mp4">
+</video>
 
 ---
 
