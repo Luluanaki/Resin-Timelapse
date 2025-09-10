@@ -17,10 +17,9 @@ and ChiTuBox-style slicer settings.
 
 ---
 
-# 🖼️ Example
-<video autoplay loop muted playsinline width="640">
-  <source src="assets/Body2_Head1.mp4" type="video/mp4">
-</video>
+# 🖼️ Example 
+[Example 1](https://github.com/Luluanaki/Resin-Timelapse/blob/5572965f2af33ea39c5da774c944d765c44e3339/assets/Body2_Head1.mp4)
+[Example 2](https://github.com/Luluanaki/Resin-Timelapse/blob/5572965f2af33ea39c5da774c944d765c44e3339/assets/Head23.mp4)
 
 ---
 
